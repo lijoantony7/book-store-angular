@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { PublicModule } from './public/public.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,10 +14,11 @@ import { PublicModule } from './public/public.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, // Import AppRoutingModule
     AuthModule,
     UserModule,
     PublicModule,
+    SharedModule,
+    AppRoutingModule, // Import AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
