@@ -1,0 +1,19 @@
+Wildcard Route
+----------------------
+
+When the URL is wrong the page will make error in the console,
+its not good way to handle the error,
+SO GONNA SHOW NOT FOUND PAGE.
+
+Create a not-found component in shared module.
+in app.routing.module.ts, add this path: 
+	  { path: '**', component: NotFoundComponent},
+Make sure this path SHOULD BE THE LAST LINE OF ROUTING IN THIS.
+	Angular will search for line by line path and ENDS AT '**' path.
+	If it is above the other path won't work after reaching this '**' path.
+AND Make sure AppRoutingModule, in app.module.ts file, last of the import array.
+
+Bcs this '**' path will be the last routing path (Wildcard route)
+The Angular router uses a first-match strategy, stopping at the first match it finds. The wildcard route (**) matches any URL, so placing it before other routes would catch all URLs, preventing later routes from being checked. To ensure all specific routes are evaluated first, place the wildcard route last.
+
+AppRoutingModule should be last in the imports array because the router merges routes in the listed order. Placing AppRoutingModule last ensures that application-specific routes take precedence over feature module routes, especially if those modules include wildcard routes.

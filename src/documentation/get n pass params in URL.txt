@@ -1,0 +1,28 @@
+@Component({
+	.....
+  })
+export class DeleteBooksComponent implements OnInit{
+  constructor(private routes: ActivatedRoute){}
+
+  userId:string = '';
+
+  ngOnInit(): void {
+      this.routes.parent?.params.subscribe((param)=>{
+        this.userId = param['userId'];
+      });
+  }
+}
+
+OnInit interface has only one method ngOnInit(): overriding here, which runs after component initialization completed (we can do any configs here now). 
+From the URL we can take the params using these code.
+-> initialize the constructor with ActivatedRoute.
+-> calling ngOnInit() method
+-> this,routes.params.subscribe() will gets the params from the url.
+-> parent? : for getting the parent params from the url from this component.
+-> firstChild? : for getting the child params from the url from this component.
+-> this.routes.queryParams.subscribe(): for taking the query from the URL.
+
+PASSING Params
+--------------------------
+<a routerLink="/auth/login" [queryParams]="{'name': 'Lijo', 'email': 'smaple'}">Login query params</a>
+  <a [routerLink]="['/auth/login', {'name': 'Lijo', 'email': 'sample'}]">Login with Query Params2</a>

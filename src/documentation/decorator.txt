@@ -1,0 +1,15 @@
+@Component({
+  selector: 'app-home',
+  // templateUrl: './home.component.html',
+  template: `<div>HELLO</div>`,
+  //styleUrl: './home.component.css'
+  styles: ['div{color:red}']
+})
+
+This is called decorator: the @Component is a decorator in Angular. Decorators are a special kind of 
+                declaration that can be attached to a class, method, accessor, property, or parameter. 
+                They are used to provide metadata that Angular uses to understand how to process a class.
+
+templateUrl OR template can be used a time.
+styleUrl OR styles can ve used a time.
+This will simplify the files (component.html or component.css) can be deleted.

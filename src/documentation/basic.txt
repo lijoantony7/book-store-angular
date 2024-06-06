@@ -1,0 +1,16 @@
+MODULE APP
+ng new my-app --standalone false
+
+Declarations
+Components, directives, and pipes must be declared in exactly one module.
+The declarations array is used for this purpose. This tells Angular that these components,
+ directives, and pipes belong to this specific module.
+
+Exports
+The exports array is used to make components, directives, and pipes available to other
+modules that import this module. If a component, directive, or pipe is not exported,
+it will not be accessible outside its own module.
+
+imports
+This array lists other Angular modules that are required by this module.
+CommonModule is imported to use common Angular directives like ngIf and ngFor.

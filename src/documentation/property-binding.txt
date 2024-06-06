@@ -1,0 +1,27 @@
+Property Binding with Square Brackets ([])
+When you use square brackets in Angular, you are performing property binding.
+This allows you to bind a property of an HTML element or Angular component to a
+variable or expression in your component class.
+
+Example:
+html
+<!-- app.component.html -->
+<button [disabled]="isDisabled">Click Me</button>
+
+typescript
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  isDisabled = true;
+}
+
+In this example:
+
+[disabled]="isDisabled": The disabled property of the button element is bound to the isDisabled property of the component.
+ If isDisabled is true, the button will be disabled.

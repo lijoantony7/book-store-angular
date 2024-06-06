@@ -1,0 +1,12 @@
+constructor(private routes: ActivatedRoute, private router: Router) { }
+bookDetail(userId:number, authorId:number): void{
+    this.router.navigate(['/public/book-details', userId, 'author', authorId],
+      {queryParams: {name: 'Lijo'}}
+    );
+  }
+
+In the component, thought the btn click we can navigate to another url. 
+-> Add one more para in the constructor (Router is also a service that's why its in constructor)
+-> this.router.navigate() inside this we can give the url same as we give in html page.
+	we can also pass the query in the url.
+-> in html: <button (click)="bookDetail(10, 120)">Book Detail</button>

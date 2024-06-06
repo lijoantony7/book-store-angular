@@ -1,0 +1,22 @@
+redirectTo and pathMatch
+------------------------
+
+{ path: '', redirectTo: 'about-us', pathMatch: 'full'},
+{ path: 'about-us', component: AboutUsComponent},
+
+In the component URL, if the path is '' (empty), then can be redirectTo another path.
+
+path: 'public', component: PublicComponent,
+    children: [
+      { path: '', redirectTo: 'all-books', pathMatch: 'full' },
+      { path: 'all-books', component: AllBooksComponent },
+    ]
+
+if empty after /public/ then the path will be redirected to all-books path.
+
+- **prefix**: The default path-matching strategy.
+     The router matches URL elements from the left and stops at the first match.
+      For example, '/team/11/user' matches 'team/:id'.
+
+- **full**: The route only matches if the URL exactly matches the specified path.
+     Useful for routes with empty or wildcard segments.
