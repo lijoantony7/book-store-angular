@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   bookDetail(userId:number, authorId:number): void{
     this.router.navigate(['/public/book-details', userId, 'author', authorId],
-      {queryParams: {name: 'Lijo'}}
+      {queryParams: {name: 'Lijo', email: 'sample'}}
     );
   }
 }
