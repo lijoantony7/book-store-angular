@@ -13,3 +13,9 @@ But Angular material can be used in only Angular apps.
     -> style.css
   These files will be updated.
 
+------------------------------
+Angular material Auto generate
+------------------------------
+address-form, navigation, dashboard, table, drag-drop: these can gen auto by angular.
+eg: ng generate @angular/material:navigation <component-name>
+    -> will generate navigation component with all the code automatically.
