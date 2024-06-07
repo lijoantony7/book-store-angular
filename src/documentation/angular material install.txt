@@ -1,0 +1,15 @@
+
+Design framework: Bootstrap also design framework : can use in all the web app.
+But Angular material can be used in only Angular apps.
+
+1) via terminal: ng add @angular/material
+    -> app.module.ts
+        "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
+            ],
+    -> angular.json
+    -> index.html
+        font link be added in the head
+    -> style.css
+  These files will be updated.
+
