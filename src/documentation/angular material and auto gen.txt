@@ -19,3 +19,12 @@ Angular material Auto generate
 address-form, navigation, dashboard, table, drag-drop: these can gen auto by angular.
 eg: ng generate @angular/material:navigation <component-name>
     -> will generate navigation component with all the code automatically.
+
+---------------------------
+Material toolbar responsive
+---------------------------
+angular material.io, from this we can get all the code for required component.
+copy and use in the app. (html, css also will be there)
+API SHOULD BE IMPORT IN THE app.module.js file.
+
+REMOVE ALL THE BOOTSTRAP link and path then only ANGULAR MATERIAL WILL WORK FINE.
