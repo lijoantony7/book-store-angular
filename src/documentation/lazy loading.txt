@@ -1,0 +1,23 @@
+Lazy loading is a design pattern.
+  Used to optimize the performance of app by loading comp, modules, or assests as
+  they required.
+
+IMPROVED INITIAL LOAD TIME: By only loading required components initially,
+  app's initial load time is reduced.
+REDUCED MEMORY FOOTRINT: loading required components reduce memory footprint.
+  (we can check this in network tab of console)
+BETTER CODE ORGANIZATION.
+
+How Does Lazy Loading Work in Angular?
+  Angular creates a Single Page Application
+  (SPA), where all of its components are loaded at once. This could mean that
+  a lot of unnecessary libraries or modules might be loaded as well, which can
+  increase the load time as the application grows
+
+CODE
+----
+{path: 'user/:userId', component: UserComponent,
+    loadChildren: () => import('./user/user.module').then(x => x.UserModule)
+},
+
+loadChildren will load the required components only when its required.
