@@ -1,0 +1,11 @@
+
+1) add CND file in the index.html > header.
+2) npm install bootstrap in termial.
+    -> it will download the bootstrap css file and update the package.json
+    -> then we can import the file in style.css file in root level.
+        @import url('../node_modules/bootstrap/dist/css/bootstrap.css');
+3) add the bootstrap file in the angular.json file
+    -> in style array: "styles": [
+                  "src/styles.css",
+                  "node_modules/bootstrap/dist/css/bootstrap.css"
+                ],
