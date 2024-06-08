@@ -6,10 +6,12 @@ import { AboutUsComponent } from './public-components/about-us/components/about-
 import { BooksComponent } from './books/books.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './public-components/home/home.component';
+import { HowItWorksComponent } from './public-components/how-it-works/components/how-it-works/how-it-works.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'about-us', component: AboutUsComponent},
+  { path: 'how-it-works', component: HowItWorksComponent},
   { path: 'books', component: BooksComponent,
     loadChildren: () => import('./books/books.module').then(x => x.BooksModule)
   },

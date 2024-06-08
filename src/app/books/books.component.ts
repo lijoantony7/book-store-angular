@@ -10,12 +10,7 @@ export class BooksComponent implements OnInit{
 
   constructor(private routes: ActivatedRoute){}
 
-  userId: number = 12;
-  authorId: number = 14;
-
   ngOnInit(): void {
-    this.routes.firstChild?.params.subscribe((param)=>{
-      console.log('childeparams', param);
-    });
+
   }
 }

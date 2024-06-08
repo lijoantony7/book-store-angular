@@ -1,17 +1,5 @@
-<!-- <p>
-  <mat-toolbar>
-    <span>My Application</span>
-  </mat-toolbar>
-</p> -->
 <app-toolbar></app-toolbar>
-<div>
-  <a [routerLink]="['/auth/login']">Login</a>
-  <a [routerLink]="['/about-us']">About us</a>
-  <a routerLink="/auth/login" [queryParams]="{'name': 'Lijo', 'email': 'smaple'}">Login With Query</a>
-  <a [routerLink]="['/public/all-books']">All Books</a>
-  <a [routerLink]="['/user/1/add-books']">add-books</a>
-  <a [routerLink]="['/user/1/delete-books']">delete-books</a>
-</div>
 
 <router-outlet></router-outlet>
+
 <app-footer></app-footer>
