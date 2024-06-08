@@ -1,0 +1,52 @@
+ANGULAR SERVICE Create
+----------------------
+service is a special TypeScript class that contains methods and fields1.
+It’s a piece of reusable code with a focused purpose.
+
+Purpose: Services are used to provide functionality that can be used by multiple components, like retrieving data from an API or handling user authentication.
+
+Usage: Services can be used for features that are independent of components such as logging services, sharing logic or data across components, and encapsulating external interactions like data access.
+
+-> job of components is to show the data, but data comes from service.
+  All service in ANGULAR is works in Dipendancy Injection (DI).
+  By injectable concept is service. By using @Injectable we are making it as Service.
+
+  Creation: ng g s <servicename>
+
+  Now its for bookService so, books/service/book-service
+
+  @Injectable({
+    "providerIn":"root"
+  })
+  export class BookService{
+
+  }
+
+SERVICE DATA MODEL
+------------------
+Create a folder for model: clss with properties
+  books/model/book-model
+
+HOW TO USE SERVICE
+------------------
+To use the service in our components,
+  Using DI, Inject this service in constrctor of the components:
+  1. constrctor(servicevar: serviceName){}
+  2. in OnInit(){
+    call the methods from service.
+  }
+
+SERVICE ACCESS
+--------------
+In components, to use the service,
+We can add this in component level(In component decorator) or Module level (in module decorator).
+  @Component({
+    providers: [serviceName]
+})
+
+IF THE SERVICE IN ACCESS FOR ALL THE APP LEVEL
+----------------------------------------------
+In the service itseft we can give: providerIn:root
+@Injectable({
+    "providerIn":"root"
+  })
