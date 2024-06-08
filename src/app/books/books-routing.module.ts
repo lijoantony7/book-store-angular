@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AllBooksComponent } from './components/all-books/all-books.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from '../public-components/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'all-books', pathMatch: 'full' },
@@ -18,4 +18,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class PublicRoutingModule { }
+export class BooksRoutingModule { }

@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
-import { AboutUsComponent } from './about-us/components/about-us/about-us.component';
-import { PublicComponent } from './public/public.component';
+import { AboutUsComponent } from './public-components/about-us/components/about-us/about-us.component';
+import { BooksComponent } from './books/books.component';
 import { UserComponent } from './user/user.component';
+import { HomeComponent } from './public-components/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'about-us', pathMatch: 'full'},
+  { path: '', component: HomeComponent},
   { path: 'about-us', component: AboutUsComponent},
-  { path: 'public', component: PublicComponent,
-    loadChildren: () => import('./public/public.module').then(x => x.PublicModule)
+  { path: 'books', component: BooksComponent,
+    loadChildren: () => import('./books/books.module').then(x => x.BooksModule)
   },
   {path: 'auth', component: AuthComponent,
     loadChildren: () => import('./auth/auth.module').then(x => x.AuthModule)
