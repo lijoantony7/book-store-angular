@@ -1,0 +1,25 @@
+PROVIDEDIN: ROOT VS ANY
+-----------------------
+
+[[[[The PROVIDERS array in Angular's AppModule (or any other module)
+is a crucial part of the dependency injection system.
+It allows you to register services and other dependencies.]]]]
+
+the providedIn metadata for services in the @Injectable decorator
+indicates where the service should be provided.
+
+providedIn: 'root'
+------------------
+the service is registered in the root injector of the application.
+ie, SINGLETON INSTANCE A single instance of the service is created and shared across the entire application.
+eg: logging service, or a configuration service.
+
+providedIn: 'any'
+-----------------
+the service is provided in all injectors.
+ie, MULTIPLE INSTANCE: A new instance of the service is created for each lazy-loaded module that imports it.
+Each instance is unique to the module.
+eg: A FeatureService that should have a separate instance for each feature module.
+
+(In both) Tree Shakable: If the service is not used anywhere in the application,
+                        it will be removed during the build process (tree-shaking).
