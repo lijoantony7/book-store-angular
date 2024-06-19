@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { BookModel } from '../../models/book.model';
-import { CounterService } from '../../../shared/services/counter.service';
+import { Counter2Service } from '../../../shared/services/counter2.service';
 
 @Component({
   selector: 'app-all-books',
@@ -9,7 +9,7 @@ import { CounterService } from '../../../shared/services/counter.service';
   styleUrl: './all-books.component.css'
 })
 export class AllBooksComponent implements OnInit{
-  constructor(public bookService: BookService, public _counterService: CounterService){}
+  constructor(public bookService: BookService, public _counterService: Counter2Service){}
 
   public books: BookModel[] = [];
 

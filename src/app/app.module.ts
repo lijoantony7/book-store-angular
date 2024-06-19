@@ -24,7 +24,7 @@ import { Counter2Service } from './shared/services/counter2.service';
     AppRoutingModule, // Import AppRoutingModule
     BrowserAnimationsModule,
   ],
-  providers: [{provide: CounterService, useClass: Counter2Service}],
+  providers: [{provide: Counter2Service, useExisting: CounterService}, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

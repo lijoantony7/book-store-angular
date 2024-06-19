@@ -1,0 +1,35 @@
+useExisting in providedIn
+-------------------------
+
+useExisting is useful when you have a scenario where you want
+different names (tokens) to refer to the same instance of a service.
+This can happen in complex applications where refactoring
+or legacy code requires multiple names for the same service.
+
+providers: [
+  AuthService,
+  { provide: LoginService, useExisting: AuthService }
+],
+
+      LoginService -> token
+      AuthService -> provider
+
+AuthService:
+This line registers AuthService with the dependency injection system.
+Angular will create a single instance of AuthService and provide it wherever it's injected.
+
+Aliasing with useExisting:
+This line sets up an alias, essentially telling Angular:
+"When someone asks for LoginService, give them the instance of AuthService."
+
+Benefits of useExisting
+Single Instance: one instance of the service is created and used across in application.
+Code Reusability: Allows you to reuse the implementation of one service under a different token.
+
+===============
+
+ providers: [{provide: Counter2Service, useExisting: CounterService}, CounterService],
+  -> here in useExisting, CounterService's instance will be used even the provide is Counter2Service.
+  -> The last CounterService is for giving the providers in the array same as giving in @Injectable of service.
+  -> Opposite also possible,
+       providers: [{provide: CounterService, useExisting: Counter2Service}, Counter2Service],
