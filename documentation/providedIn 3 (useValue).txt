@@ -1,0 +1,24 @@
+useValue in providedIn
+-------------------------
+
+useValue provider allows you to define a simple value
+that can be injected into your components, services,
+or other parts of your application. This is useful
+when you need to provide constant values or configuration
+settings throughout your application.
+
+providers: [
+  AuthService,
+  { provide: LoginService, useExisting: AuthService }
+],
+
+ providers: [{provide: Counter2Service <token>, useExisting: CounterService <provider>},
+             CounterService,
+             {provide: 'appTitle', useValue: 'This is title of app'}
+            ],
+
+in useValue, we can pass any type of data: array, objects...
+
+And, useValue value can be used in everywhere of the app.
+for that, ex, using in component.ts
+      In constructor use @Inject('provideName') public varname: varType
