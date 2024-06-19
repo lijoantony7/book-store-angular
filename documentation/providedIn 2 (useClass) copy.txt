@@ -1,0 +1,35 @@
+useClass in providedIn
+----------------------
+
+@Injectable({
+  providedIn: 'root',
+  useClass: RealDataService
+}) (in service itself)
+
+    (OR)
+
+providers: [
+  {
+    provide: DataService,
+    useClass: environment.production ? RealDataService : MockDataService
+  }
+],  (in app.module)
+
+you can use the providedIn property in combination with useClass,
+useExisting, useValue, or useFactory to configure the provider for a service.
+
+Scenario: Using useClass to provide an alternative implementation
+Suppose you have {A SERVICE INTERFACE DataService} and {TWO} implementations:
+  RealDataService and MockDataService. You want to provide RealDataService
+  in the production environment and MockDataService in the testing environment.
+
+Use Case: Switching between different implementations of
+          a service based on environment or other conditions.
+    you can control and customize the behavior of your
+    Angular services in different contexts, making your
+    application more flexible and testable.
+
+
+if it is app.module.ts
+  providers: [CounterService] -> its in "root" level
+if it is in other module its in "any" level

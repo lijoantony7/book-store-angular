@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class CounterService {
+export class Counter2Service {
 
 public counter: number = 0;
 
   constructor() { }
 
   public incCounter(): void{
-    this.counter++;
+    this.counter+=2;
   }
 
   public decCounter(): void{
-    this.counter--;
+    this.counter-=2;
   }
 }

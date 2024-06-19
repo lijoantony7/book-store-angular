@@ -4,11 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AboutUsComponent } from './public-components/about-us/components/about-us/about-us.component';
 import { HowItWorksComponent } from './public-components/how-it-works/components/how-it-works/how-it-works.component';
 import { HomeComponent } from './public-components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CounterService } from './shared/services/counter.service';
+import { Counter2Service } from './shared/services/counter2.service';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule, // Import AppRoutingModule
     BrowserAnimationsModule,
   ],
-  providers: [
-    provideAnimationsAsync()
-  ],
+  providers: [{provide: CounterService, useClass: Counter2Service}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
