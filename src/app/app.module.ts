@@ -1,3 +1,4 @@
+import { TestService } from './shared/services/test.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,7 @@ import { HomeComponent } from './public-components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CounterService } from './shared/services/counter.service';
 import { Counter2Service } from './shared/services/counter2.service';
+import { counterFactory } from './shared/services/counter.factory';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,15 @@ import { Counter2Service } from './shared/services/counter2.service';
     AppRoutingModule, // Import AppRoutingModule
     BrowserAnimationsModule,
   ],
-  providers: [{provide: Counter2Service, useExisting: CounterService},
-     CounterService,
-     {provide: 'appTitle', useValue: 'This is app Title'}
+  providers: [
+    // {
+    //   provide: CounterService, useFactory: (testService: TestService)=>
+    //   testService.status ? new CounterService() : new Counter2Service(),
+    //   deps: [TestService]
+    // },
+    counterFactory,
+    TestService,
+    {provide: 'appTitle', useValue: 'This is app Title'}
     ],
   bootstrap: [AppComponent]
 })

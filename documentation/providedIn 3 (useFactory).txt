@@ -1,0 +1,19 @@
+useFactory in providedIn
+-------------------------
+Scenario: we need to apply a logic before creating the instance of the service.
+
+useFactory is a way to tell Angular how to create a service
+or value using a function. This function is called a factory function,
+and it can contain logic to create the service or value based on certain conditions or dependencies.
+
+Why Use useFactory?
+Dynamic Configuration: When you need to create a service or value dynamically at runtime.
+Complex Initialization: When the initialization logic is complex and cannot be done with a simple value.
+
+provide: CounterService, useFactory: (testService: TestService)=>
+      testService.status ? new CounterService() : new Counter2Service(),
+      deps: [TestService]
+
+in useFactory we are giving an conditions to use the instance. The conditions are in testServce.
+ -> deps in this is dependencies of this useFactory.
+ -> we can put the favtory code in separate file to redability and reusability.
